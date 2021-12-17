@@ -13,7 +13,7 @@ jobs:
           uses: carlosnizolli/RobotLint@v2.3
           with:
              robot-files: Exemplos
-   RunKwIF:
+   BuiltIn:
         runs-on: ubuntu-latest
         needs: Lint
         steps:   
@@ -24,14 +24,14 @@ jobs:
           uses: carlosnizolli/robotframework-docker-action@browser
           env:
             DOCKER_SHM_SIZE: 11000000
-            ROBOT_TESTS_DIR: ${{ github.workspace }}/Exemplos/Run-KW-If/Tests
+            ROBOT_TESTS_DIR: ${{ github.workspace }}/Exemplos/BuiltIn/Tests
             ROBOT_REPORTS_DIR: ${{ github.workspace }}/reports
-            ROBOT_OPTIONS: "--name Run-KW-If"
+            ROBOT_OPTIONS: "--name BuiltIn"
            
             
         - name: Upload test to artifact
           uses: actions/upload-artifact@v1
           if: always()
           with:
-            name: RunKWIf
+            name: BuiltIn
             path: ${{ github.workspace }}/reports
