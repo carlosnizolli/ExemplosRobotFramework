@@ -7,13 +7,15 @@ Library            DateTime
 
 ***Keywords***
 Pega a data atual
+    [Documentation]    Pega a data atual e extrai o dia
     ${Date} =	Get Current Date
     ${Day} =    Convert Date    ${Date}    result_format=%a
     Set Test Variable    ${Day}
 
-Verifica se é dia de happy hour    
+Verifica se é dia de happy hour
+    [Documentation]    Verifica se o dia é Sexta e exibe no console
     Run Keyword If    '${Day}'=='Fri'
-    ...    Log To Console    É Sexta Feira!!! Dia de Happy Hour 
+    ...    Log To Console    É Sexta Feira!!! Dia de Happy Hour
     ...  ELSE IF    '${Day}'=='Thu'
     ...    Log To Console    Falta Apenas um dia!!!
     ...  ELSE

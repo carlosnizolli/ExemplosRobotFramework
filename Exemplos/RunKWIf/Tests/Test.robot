@@ -1,4 +1,6 @@
 ***Settings***
+Documentation      O propósito desta suite é mostrar um exemplo simples
+...                utilizando a kw da BuiltIn Run Keyword If
 Resource          ../Resource/Resource.robot
 
 
