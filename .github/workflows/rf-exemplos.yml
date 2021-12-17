@@ -24,7 +24,7 @@ jobs:
           uses: carlosnizolli/robotframework-docker-action@browser
           env:
             DOCKER_SHM_SIZE: 11000000
-            ROBOT_TESTS_DIR: ${{ github.workspace }}/Exemplos/RunKWIf/Tests
+            ROBOT_TESTS_DIR: ${{ github.workspace }}/Exemplos/Run-KW-If/Tests
             ROBOT_REPORTS_DIR: ${{ github.workspace }}/reports
            
             

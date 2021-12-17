@@ -1,9 +1,7 @@
 ***Settings***
 Library            DateTime
 
-
 ***Variable***
-
 
 ***Keywords***
 Pega a data atual
@@ -15,8 +13,12 @@ Pega a data atual
 Verifica se é dia de happy hour
     [Documentation]    Verifica se o dia é Sexta e exibe no console
     Run Keyword If    '${Day}'=='Fri'
-    ...    Log To Console    É Sexta Feira!!! Dia de Happy Hour
+    ...    Exibe confirmação no Console
     ...  ELSE IF    '${Day}'=='Thu'
     ...    Log To Console    Falta Apenas um dia!!!
     ...  ELSE
     ...    Log To Console    Ainda não é Sexta
+
+Exibe confirmação no Console
+    [Documentation]    Exibe no console que é sexta
+    Log To Console    É Sexta Feira!!! Dia de Happy Hour
