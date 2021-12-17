@@ -2,7 +2,7 @@ name: Roda Exemplos
 
 on:
   pull_request:
-    branches: [ main, homol ]
+    branches: [ master, homol ]
     
 jobs: 
    Lint:
