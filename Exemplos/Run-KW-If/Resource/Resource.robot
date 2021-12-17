@@ -20,4 +20,5 @@ Verifica se é dia de happy hour
     ...    Log To Console    Ainda não é Sexta
 
 Exibe confirmação no Console
+    [Documentation]    Exibe no console que é sexta
     Log To Console    É Sexta Feira!!! Dia de Happy Hour
