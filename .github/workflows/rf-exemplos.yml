@@ -26,6 +26,7 @@ jobs:
             DOCKER_SHM_SIZE: 11000000
             ROBOT_TESTS_DIR: ${{ github.workspace }}/Exemplos/Run-KW-If/Tests
             ROBOT_REPORTS_DIR: ${{ github.workspace }}/reports
+            ROBOT_OPTIONS: "--name Run-KW-If"
            
             
         - name: Upload test to artifact
