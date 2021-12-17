@@ -13,7 +13,7 @@ jobs:
           uses: carlosnizolli/RobotLint@v2.3
           with:
              robot-files: Exemplos
-   RunKwIF:
+   BuiltIn:
         runs-on: ubuntu-latest
         needs: Lint
         steps:   
