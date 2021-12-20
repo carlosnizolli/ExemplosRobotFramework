@@ -35,3 +35,7 @@ jobs:
           with:
             name: BuiltIn
             path: ${{ github.workspace }}/reports
+      Taurus:      
+        uses: actions/taurus-action@v1
+        with:
+          taurus_project_folder_name: 'Exemplos'
