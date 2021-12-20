@@ -35,7 +35,11 @@ jobs:
           with:
             name: BuiltIn
             path: ${{ github.workspace }}/reports
-      Taurus:      
+   Taurus:
+      runs-on: ubuntu-latest
+      needs: Lint
+      steps:
+      - name: TestTaurus
         uses: actions/taurus-action@v1
         with:
           taurus_project_folder_name: 'Exemplos'
