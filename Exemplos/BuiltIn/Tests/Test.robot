@@ -8,8 +8,7 @@ CT01 - Verifica se é dia de happy hour
     [Documentation]    Teste exibe no console se é dia de happy hour ou não
     ...                Teste usando Run Keyword IF
     ...                Log To Console
-    ...                Set Variable
-             
+    ...                Set Variable          
     Pega a data atual
     Verifica se é dia de happy hour
 

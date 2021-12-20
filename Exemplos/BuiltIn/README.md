@@ -9,4 +9,4 @@ Documentação: [BuiltIn](https://robotframework.org/robotframework/latest/libra
 
 - CT02 utiliza as Keywords **Get Time (day)**, **Create Dictionary** e **Set Suite Variable**.
 
-- CT03 utiliza as Keywords **Run Keywords**, **Evaluate** e **Get Time (year)** . Utiliza também a variável de Suite ${mes} criada no teste anterior e dicionário global &{MESES_DIAS}. Utiliza variáveis ${TRUE} e ${FALSE}.
+- CT03 utiliza as Keywords **Run Keywords**, **Evaluate** e **Get Time (year)** . Utiliza também a variável de Suite ${mes} criada no teste anterior e dicionário global &{MESES_DIAS}. Utiliza variáveis booleanas ${TRUE} e ${FALSE}.
