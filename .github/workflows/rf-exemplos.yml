@@ -40,6 +40,6 @@ jobs:
       needs: Lint
       steps:
       - name: TestTaurus
-        uses: actions/taurus-action@v1
+        uses: actions/taurus-action
         with:
           taurus_project_folder_name: 'Exemplos'
