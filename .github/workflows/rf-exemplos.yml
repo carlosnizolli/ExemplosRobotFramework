@@ -35,12 +35,4 @@ jobs:
           with:
             name: BuiltIn
             path: ${{ github.workspace }}/reports
-   Taurus:
-      runs-on: ubuntu-latest
-      needs: Lint
-      steps:
-      - name: TestTaurus
-        uses: Rbillon59/taurus-action@v0.1-beta
-        with:
-          taurus_project_folder_name: '${{ github.workspace }}/Exemplos'
-          taurus_command_line: '/taurus.yml'
+
