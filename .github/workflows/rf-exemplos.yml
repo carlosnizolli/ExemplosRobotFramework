@@ -42,5 +42,5 @@ jobs:
       - name: TestTaurus
         uses: Rbillon59/taurus-action@v0.1-beta
         with:
-          taurus_project_folder_name: '/Exemplos'
+          taurus_project_folder_name: '${{ github.workspace }}/Exemplos'
           taurus_command_line: '/taurus.yml'
