@@ -67,6 +67,11 @@ jobs:
               sdkmanager "emulator"
               sdkmanager "platform-tools"
               sdkmanager --list --verbose
+              avdmanager create avd\
+               -n Android\
+               -k "system-images;android-22;default;x86_64"\
+               --device "Nexus 5"\
+               --sdcard 100M 
                
           - name: Install and Run Appium Server
             run: |
