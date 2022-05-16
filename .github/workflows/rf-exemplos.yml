@@ -37,9 +37,6 @@ jobs:
             path: ${{ github.workspace }}/reports
    Mobile:
         runs-on: ubuntu-latest
-        strategy:
-          matrix:
-            api-level: [21, 23, 29]
         needs: Lint
         steps:   
           - uses: actions/checkout@v2
@@ -62,28 +59,14 @@ jobs:
 
           - name: Setup Android SDK
             uses: android-actions/setup-android@v2   
-            
-          - name: Gradle cache
-            uses: gradle/gradle-build-action@v2
-        
-          - name: AVD cache
-            uses: actions/cache@v3
-            id: avd-cache
-            with:
-              path: |
-                ~/.android/avd/*
-                ~/.android/adb*
-              key: avd-${{ matrix.api-level }}
-
-          - name: create AVD and generate snapshot for caching
-            if: steps.avd-cache.outputs.cache-hit != 'true'
-            uses: reactivecircus/android-emulator-runner@v2
-            with:
-              api-level: ${{ matrix.api-level }}
-              force-avd-creation: false
-              emulator-options: -no-window -gpu swiftshader_indirect -noaudio -no-boot-anim -camera-back none
-              disable-animations: false
-              script: echo "Generated AVD snapshot for caching."
+          
+          - name: Install and run Emulator
+            run: |
+              sdkmanager "platforms;android-22"
+              sdkmanager "system-images;android-22;default;x86_64"
+              sdkmanager "emulator"
+              sdkmanager "platform-tools"
+              sdkmanager --list --verbose
                
           - name: Install and Run Appium Server
             run: |
