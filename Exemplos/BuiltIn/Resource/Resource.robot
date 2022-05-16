@@ -36,7 +36,7 @@ Exibe mês numérico no log e nome no console
 
 Verifica se mês atual é Fevereiro
     [Documentation]    Faz verificações devido Fevereiro possuir mais dias em ano bissesto
-    Run Keyword If    ${mes}==2
+    Run Keyword If    '${mes}'=='02'
     ...  Run Keywords
     ...     Log To console        Mês atual é Fevereiro    AND
     ...     Verifica se ano é bissesto
@@ -53,14 +53,14 @@ Exibe a quantidade de dias no console
     [Documentation]    Pega quantidade de dias no dicionário global
     ...                exibe de acordo com o mês e ano
     Log   ${bissesto}
-    Run Keyword If    ${mes}==2 and ${bissesto} is ${TRUE}
+    Run Keyword If    '${mes}'=='02' and ${bissesto} is ${TRUE}
     ...     Exibe quantidade de dias de fevereiro bissesto     
      ...  ELSE
     ...    Log To Console    Quantidade de dias do mês atual é ${MESES_DIAS}[${mes}]         
 
 Exibe quantidade de dias de fevereiro bissesto
     [Documentation]    Se for bissesto soma 1 dia no mês de fevereiro
-    ${Qtdade} =     Evaluate        ${MESES_DIAS}[${mes}]+1
+    ${Qtdade} =     Evaluate        ${MESES_DIAS}[${mes}]+01
     Log To Console    Quantidade de dias do mês atual em ano bissesto é ${Qtdade}
 
 Cria variável bissesto
