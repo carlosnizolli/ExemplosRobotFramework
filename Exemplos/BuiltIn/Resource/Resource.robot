@@ -30,7 +30,7 @@ Pega o mês Atual
 
 Exibe mês numérico no log e nome no console
     [Documentation]    Cria dicionário e exibe mês atual   
-    &{Dictionary} =    Create Dictionary    1=Janeiro    2=Fevereiro    3=Março    4=Abril    5=Maio    6=Junho    7=Julho    8=Agosto    9=Setembro    10=Outubro    11=Novembro    12=Dezembro    
+    &{Dictionary} =    Create Dictionary    01=Janeiro    02=Fevereiro    03=Março    04=Abril    05=Maio    06=Junho    07=Julho    08=Agosto    09=Setembro    10=Outubro    11=Novembro    12=Dezembro    
     Log    ${Dictionary}[${mes}]
     Log To Console    O mês atual é: ${Dictionary}[${mes}]
 
