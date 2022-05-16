@@ -64,6 +64,8 @@ jobs:
             run: |
               npm install -g appium
               appium &
+          - name: "Run UI Tests"
+            uses: faruktoptas/android-github-actions-emulator@latest   
             
           - name: Create folder for reports
             run:  mkdir -m 777 reports
