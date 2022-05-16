@@ -60,19 +60,19 @@ jobs:
           - name: Setup Android SDK
             uses: android-actions/setup-android@v2   
             
+          - name: Install and configure emulator   
+            run: |
+              sdkmanager “platforms;android-28”
+              sdkmanager “system-images;android-28;default;x86”
+              sdkmanager “build-tools;28.0.3”
+              avdmanager create avd — name android28 — package “system-images;android-28;default;x86”
+              emulator -avd android28
+               
           - name: Install and Run Appium Server
             run: |
               npm install -g appium
               appium &
-              
-          - name: checkout
-            uses: actions/checkout@v3
 
-          - name: run tests
-            uses: reactivecircus/android-emulator-runner@v2
-            with:
-              api-level: 29
-              script: ./gradlew connectedCheck
             
           - name: Create folder for reports
             run:  mkdir -m 777 reports
