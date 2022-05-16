@@ -63,17 +63,20 @@ jobs:
           - name: Install and Run Appium Server
             run: |
               npm install -g appium
+              appium &>/dev/null &
             
           - name: Create folder for reports
             run:  mkdir -m 777 reports
-          - name: Execute Robot tests
-            uses: carlosnizolli/robotframework-docker-action@browser
-            env:
-              DOCKER_SHM_SIZE: 11000000
-              ROBOT_TESTS_DIR: ${{ github.workspace }}/Exemplos/Appium/tests.robot
-              ROBOT_REPORTS_DIR: ${{ github.workspace }}/reports
-              ROBOT_OPTIONS: "--name Mobile"
+          - name: Robot Install   
+            run: |
+              pip3 install robotframework
+              pip3 install robotframework-browser
+              pip3 install robotframework-appiumlibrary
+              rfbrowser init
               
+          - name: Execute Robot tests
+            run: robot -d ${{ github.workspace }}/reports ${{ github.workspace }}/Exemplos/Appium/tests.robot
+             
           - name: Upload test to artifact
             uses: actions/upload-artifact@v1
             if: always()
