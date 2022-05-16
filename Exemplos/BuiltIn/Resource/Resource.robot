@@ -30,13 +30,13 @@ Pega o mês Atual
 
 Exibe mês numérico no log e nome no console
     [Documentation]    Cria dicionário e exibe mês atual   
-    &{Dictionary} =    Create Dictionary    1=Janeiro    2=Fevereiro    3=Março    4=Abril    5=Maio    6=Junho    7=Julho    8=Agosto    9=Setembro    10=Outubro    11=Novembro    12=Dezembro    
+    &{Dictionary} =    Create Dictionary    01=Janeiro    02=Fevereiro    03=Março    04=Abril    05=Maio    06=Junho    07=Julho    08=Agosto    09=Setembro    10=Outubro    11=Novembro    12=Dezembro    
     Log    ${Dictionary}[${mes}]
     Log To Console    O mês atual é: ${Dictionary}[${mes}]
 
 Verifica se mês atual é Fevereiro
     [Documentation]    Faz verificações devido Fevereiro possuir mais dias em ano bissesto
-    Run Keyword If    ${mes}==2
+    Run Keyword If    '${mes}'=='02'
     ...  Run Keywords
     ...     Log To console        Mês atual é Fevereiro    AND
     ...     Verifica se ano é bissesto
@@ -53,14 +53,14 @@ Exibe a quantidade de dias no console
     [Documentation]    Pega quantidade de dias no dicionário global
     ...                exibe de acordo com o mês e ano
     Log   ${bissesto}
-    Run Keyword If    ${mes}==2 and ${bissesto} is ${TRUE}
+    Run Keyword If    '${mes}'=='02' and ${bissesto} is ${TRUE}
     ...     Exibe quantidade de dias de fevereiro bissesto     
      ...  ELSE
     ...    Log To Console    Quantidade de dias do mês atual é ${MESES_DIAS}[${mes}]         
 
 Exibe quantidade de dias de fevereiro bissesto
     [Documentation]    Se for bissesto soma 1 dia no mês de fevereiro
-    ${Qtdade} =     Evaluate        ${MESES_DIAS}[${mes}]+1
+    ${Qtdade} =     Evaluate        ${MESES_DIAS}[${mes}]+01
     Log To Console    Quantidade de dias do mês atual em ano bissesto é ${Qtdade}
 
 Cria variável bissesto
