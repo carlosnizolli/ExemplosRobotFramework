@@ -63,10 +63,11 @@ jobs:
           - name: Install and Run Appium Server
             run: |
               npm install -g appium
-              appium
+              appium &
             
           - name: Create folder for reports
             run:  mkdir -m 777 reports
+            
           - name: Robot Install   
             run: |
               pip3 install robotframework
